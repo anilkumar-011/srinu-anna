@@ -1,63 +1,7 @@
 'use client'
-import React, { useState } from 'react';
+import { iphones } from "../../products"
 
 const iPhoneSellingPage = () => {
-  // State to manage iPhone products - removed Gemini API related states
-  const [iphones, setIphones] = useState([
-    {
-      id: 101,
-      name: 'iPhone 14 Pro Max',
-      storage: '256GB',
-      condition: 'Excellent',
-      description: 'The ultimate iPhone experience. Pro camera system, Dynamic Island, and Always-On display.',
-      price: '$949',
-      imageUrl: 'https://placehold.co/600x400/000000/FFFFFF?text=iPhone+14+Pro+Max',
-      detailsLink: '/op',
-    },
-    {
-      id: 102,
-      name: 'iPhone 14',
-      storage: '128GB',
-      condition: 'Very Good',
-      description: 'A fantastic iPhone with advanced camera features and all-day battery life.',
-      price: '$799',
-      imageUrl: 'https://placehold.co/600x400/000000/FFFFFF?text=iPhone+14',
-      detailsLink: '#',
-    },
-    {
-      id: 103,
-      name: 'iPhone 13 Pro',
-      storage: '128GB',
-      condition: 'Good',
-      description: 'Powerful A15 Bionic chip, ProMotion display, and a versatile camera system.',
-      price: '$649',
-      imageUrl: 'https://placehold.co/600x400/000000/FFFFFF?text=iPhone+13+Pro',
-      detailsLink: '#',
-    },
-    {
-      id: 104,
-      name: 'iPhone SE (3rd Gen)',
-      storage: '64GB',
-      condition: 'Excellent',
-      description: 'Affordable yet powerful, with the A15 Bionic chip and 5G capability.',
-      price: '$349',
-      imageUrl: 'https://placehold.co/600x400/000000/FFFFFF?text=iPhone+SE+3rd+Gen',
-      detailsLink: '#',
-    },
-    {
-      id: 105,
-      name: 'iPhone 12',
-      storage: '64GB',
-      condition: 'Good',
-      description: 'Fast performance with A14 Bionic chip and a vibrant Super Retina XDR display.',
-      price: '$499',
-      imageUrl: 'https://placehold.co/600x400/000000/FFFFFF?text=iPhone+12',
-      detailsLink: '#',
-    },
-  ]);
-
-  // Removed generateDescription function
-  // Removed suggestAccessories function
 
   return (
     <div className="font-['Inter'] antialiased bg-gray-50 text-gray-900 min-h-screen pt-20">
@@ -67,7 +11,7 @@ const iPhoneSellingPage = () => {
             iPhone Collection
           </h1>
           <p className="text-xl md:text-2xl text-gray-700 mb-10 animate-fade-in-up delay-200">
-            Explore our curated selection of pre-owned iPhones.
+            Explore our curated selection of the latest and greatest iPhones.
           </p>
         </div>
       </section>
@@ -85,36 +29,23 @@ const iPhoneSellingPage = () => {
                   src={iphone.imageUrl}
                   alt={iphone.name}
                   className="w-full h-56 object-cover object-center"
-                //   onError={(e) => { e.target.onerror = null; e.target.src = `https://placehold.co/600x400/CCCCCC/000000?text=${iphone.name.replace(/\s/g, '+')}`; }}
                 />
                 <div className="p-6">
                   <h3 className="text-2xl font-semibold text-gray-900 mb-2">
                     {iphone.name}
                   </h3>
                   <p className="text-gray-600 text-sm mb-1">
-                    <span className="font-medium">Storage:</span> {iphone.storage}
+                    <span className="font-medium">Year Introduced:</span> {iphone.year_introduced}
                   </p>
                   <p className="text-gray-600 text-sm mb-3">
-                    <span className="font-medium">Condition:</span> {iphone.condition}
+                    <span className="font-medium">Storage Options:</span> {iphone.storage_options.join(', ')}
                   </p>
                   <p className="text-gray-700 text-base mb-4 line-clamp-3">
                     {iphone.description}
                   </p>
-                  <div className="flex justify-between items-center mb-4">
-                    <span className="text-3xl font-bold text-gray-900">
-                      {iphone.price}
-                    </span>
-                    <a
-                      href={iphone.detailsLink}
-                      className="text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200"
-                    >
-                      View Details &rarr;
-                    </a>
-                  </div>
                   <button className="w-full bg-gray-900 hover:bg-gray-700 text-white py-2.5 rounded-lg font-medium transition-colors duration-200">
-                    Add to Cart
+                    Click Here to customise and buy
                   </button>
-                  {/* Removed Gemini API related buttons and display */}
                 </div>
               </div>
             ))}
