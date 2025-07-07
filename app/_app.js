@@ -1,7 +1,8 @@
 // pages/_app.js
 import '../styles/globals.css'; 
 import Navbar from '../components/navbar';
-// import Footer from '../components/Footer';
+import Footer from '../components/footer';
+
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -10,7 +11,7 @@ function MyApp({ Component, pageProps }) {
       <main>
         <Component {...pageProps} />
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
